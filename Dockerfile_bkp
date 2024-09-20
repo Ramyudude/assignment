@@ -1,0 +1,6 @@
+FROM devopsedu/webapp 
+ADD projCert /var/www/html
+cat /etc/apache2/apache2.conf >> "ServerName localhost"
+RUN rm /var/www/html/index.html
+CMD apachectl -D FOREGROUND
+

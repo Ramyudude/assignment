@@ -1,5 +1,10 @@
-FROM devopsedu/webapp 
+FROM devopsedu/webapp
+
+# Copy your PHP website files to the web server directory
 ADD projCert /var/www/html
-RUN rm /var/www/html/index.html
-CMD apachectl -D FOREGROUND
+
+# Optionally expose port 80
+EXPOSE 80
+
+CMD ["apache2-foreground"]
 
